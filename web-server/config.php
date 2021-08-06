@@ -7,10 +7,10 @@ define('DB_NAME', 'id17297422_gps_db');
 date_default_timezone_set('Europe/Rome');
 
 //Connessione al DB
-$db = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME); 
+$con = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME); 
  
 //Se non funziona
-if ($db->connect_errno) { 
-    echo "Connection to database is failed: ".$db->connect_error;
+if ($con->connect_errno) { 
+    echo "Connection to database is failed: ".$con->connect_error;
     exit();
 }

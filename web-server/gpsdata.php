@@ -16,11 +16,11 @@ echo "<br>";
 echo $spd;
 
 
-$sql = "INSERT INTO gps(lat,lng,alt,spd,date) 
-	VALUES('".$lat."','".$lng."','".$alt."','".$spd."','".date("Y-m-d H:i:s")."')";
+$query = "INSERT INTO gps(lat,lng,alt,spd,date)
+	VALUES('".$lat."','".$lng."','".$alt."','".$spd."','".date("Y-m-d")."','".time("H:i:s")."')";
 
-if($db->query($sql) === FALSE)
-	{ echo "Error: " . $sql . "<br>" . $db->error; }
+if($con->query($query) === FALSE)
+	{ echo "Error: " . $query . "<br>" . $con->error; }
 
 echo "<br>";
-echo $db->insert_id;
+echo $con->insert_id;
